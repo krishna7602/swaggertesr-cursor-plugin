@@ -6,14 +6,43 @@ This is a sample server Petstore server.  You can find out more about Swagger at
 
 ---
 
+## ✨ Available Tools
+
+Cursor AI will automatically detect and understand how to use these tools when you connect this MCP server:
+
+| Tool Name | Description |
+|-----------|-------------|
+| `uploadFile` | Execute this tool via MCP |
+| `addPet` | Execute this tool via MCP |
+| `updatePet` | Execute this tool via MCP |
+| `findPetsByStatus` | Multiple status values can be provided with comma separated strings |
+| `findPetsByTags` | Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing. |
+| `getPetById` | Returns a single pet |
+| `updatePetWithForm` | Execute this tool via MCP |
+| `deletePet` | Execute this tool via MCP |
+| `getInventory` | Returns a map of status codes to quantities |
+| `placeOrder` | Execute this tool via MCP |
+| `getOrderById` | For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions |
+| `deleteOrder` | For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors |
+| `createUsersWithListInput` | Execute this tool via MCP |
+| `getUserByName` | Execute this tool via MCP |
+| `updateUser` | This can only be done by the logged in user. |
+| `deleteUser` | This can only be done by the logged in user. |
+| `loginUser` | Execute this tool via MCP |
+| `logoutUser` | Execute this tool via MCP |
+| `createUsersWithArrayInput` | Execute this tool via MCP |
+| `createUser` | This can only be done by the logged in user. |
+
+---
+
 ## 🛠️ Features
 - **One-Click Integration**: Fully compatible with Cursor's Plugin & MCP system.
-- **Production Ready**: Hosted on Vercel with SSE transport.
-- **AI-Native**: Includes `.cursorrules` to guide the AI on how to use these tools effectively.
+- **Production Ready**: Hosted securely with SSE transport.
+- **AI-Native**: Includes dynamic `skills/` tracking and `.cursorrules` to guide the AI on how and when to use these specific tools effectively.
 
 ## 🔌 How to Install
 
-### Option A: IDE Integration (Local)
+### Option A: IDE Integration (Cursor Local)
 1. Open **Cursor Settings** (`Ctrl+Shift+J` or `Cmd+Shift+J`).
 2. Navigate to **Features** > **Tools & MCP**.
 3. Click **+ New MCP Server**.
@@ -29,6 +58,7 @@ This is a sample server Petstore server.  You can find out more about Swagger at
 
 ## 📁 Project Structure
 - `.cursor-plugin/`: Plugin metadata for the Cursor Marketplace.
+- `skills/`: Individual `SKILL.md` instruction files giving precise routing signals to Cursor's model for each tool.
 - `.cursorrules`: Instruction set for Cursor AI.
 - `mcp.json`: Connection manifest for SSE server.
 
